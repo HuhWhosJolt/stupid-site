@@ -17,28 +17,7 @@
     <a href="#" class="main"><button class="btnMain">Extra</button></a>
     <a href="#" class="main"><button class="btnMain">Tools</button></a>
   </div>
-  <script>
-    function aboutBlank(event) {
-      event.preventDefault();
-      const destination=event.currentTarget.href;
-      const win=window.open('about:blank','_blank')
-      if (win) {
-        const doc=win.document;
-        const iframe=doc.createElement('iframe')
-        iframe.style.width='100vw';
-        iframe.style.height = '100vh';
-        iframe.style.border = 'none';
-        iframe.style.position = 'fixed';
-        iframe.style.top = '0';
-        iframe.style.left = '0';
-        iframe.src = destination;
-        doc.body.appendChild(iframe);
-        doc.body.style.margin = '0';
-      }
-    }
-    document.querySelectorAll('.main').forEach(element => {
-      element.addEventListener('click', aboutBlank);
-    });
+  <script href="openAboutBlank.js">
   </script>
 </body>
 </html>
